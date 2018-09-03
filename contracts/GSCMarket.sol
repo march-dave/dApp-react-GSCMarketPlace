@@ -1,6 +1,6 @@
 pragma solidity ^0.4.23;
 
-contract RealEstate {
+contract GSCMarket {
     struct Buyer {
         address buyerAddress;
         bytes32 name;
@@ -11,7 +11,7 @@ contract RealEstate {
     address public owner;
     address[10] public buyers;
 
-    event LogBuyRealEstate(
+    event LogBuyGSCMarket(
         address _buyer,
         uint _id
     );
@@ -20,13 +20,13 @@ contract RealEstate {
         owner = msg.sender;
     }
 
-    function buyRealEstate(uint _id, bytes32 _name, uint _age) public payable {
+    function buyGSCMarket(uint _id, bytes32 _name, uint _age) public payable {
         require(_id >= 0 && _id <= 9);
         buyers[_id] = msg.sender;
         buyerInfo[_id] = Buyer(msg.sender, _name, _age);
 
         owner.transfer(msg.value);
-        emit LogBuyRealEstate(msg.sender, _id);
+        emit LogBuyGSCMarket(msg.sender, _id);
     }
 
     function getBuyerInfo(uint _id) public view returns (address, bytes32, uint) {

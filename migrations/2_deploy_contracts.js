@@ -1,5 +1,5 @@
-var Election = artifacts.require("./RealEstate.sol");
+var GSCMarket = artifacts.require("./GSCMarket.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Election);
+  deployer.deploy(GSCMarket);
 };
