@@ -2,10 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Web3 from 'web3'
 
-// import web3 from '../web3.js'
 import TruffleContract from 'truffle-contract'
 import GSCMarket from '../../build/contracts/GSCMarket.json'
-// import Content from './Content'
 import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
 import "bootstrap/dist/js/bootstrap.js";
@@ -95,7 +93,7 @@ class App extends React.Component {
         } else {
           console.error(error);
         } 
-        // this.loadGSCMarket();
+        this.loadGSCMarket();
       })
     })
   }
