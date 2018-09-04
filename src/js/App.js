@@ -4,7 +4,7 @@ import Web3 from 'web3'
 
 // import web3 from '../web3.js'
 import TruffleContract from 'truffle-contract'
-import RealEstate from '../../build/contracts/RealEstate.json'
+import GSCMarket from '../../build/contracts/GSCMarket.json'
 // import Content from './Content'
 import data from '../data.json';
 import 'bootstrap/dist/css/bootstrap.css'
@@ -42,11 +42,8 @@ class App extends React.Component {
 
     this.web3 = new Web3(this.web3Provider)
 
-    this.contracts = TruffleContract(RealEstate)
+    this.contracts = TruffleContract(GSCMarket)
     this.contracts.setProvider(this.web3Provider)
-
-    // this.castVote = this.castVote.bind(this)
-    // this.watchEvents = this.watchEvents.bind(this)
   }
 
   componentDidMount() {
@@ -77,35 +74,6 @@ class App extends React.Component {
       })
     });
 
-    // TODO: Refactor with promise chain
-    // web3.eth.getCoinbase((err, account) => {
-      
-    //   this.setState({ account })
-      
-    //   this.election.deployed().then((electionInstance) => {
-    //     this.electionInstance = electionInstance
-    //     this.watchEvents()
-
-    //     this.electionInstance.candidatesCount(). ((candidatesCount) => {
-    //       for (var i = 1; i <= candidatesCount; i++) {
-    //         this.electionInstance.candidates(i).then((candidate) => {
-    //           const candidates = [...this.state.candidates]
-    //           candidates.push({
-    //             id: candidate[0],
-    //             name: candidate[1],
-    //             voteCount: candidate[2]
-    //           });
-    //           this.setState({ candidates: candidates })
-    //         });
-    //       }
-    //     })
-
-    //     this.electionInstance.voters(this.state.account).then((hasVoted) => {
-    //       this.setState({ hasVoted, loading: false })
-    //     })
-    //   })
-    // })
-
     this.web3.eth.getAccounts( (error, accounts) => {
       if (error) console.log(error);
       
@@ -113,13 +81,10 @@ class App extends React.Component {
     });
   }
 
-  componentWillUnmount() {
-  }
-
   listenToEvents = () => {
     
     this.contracts.deployed().then(  (instance) => {
-      instance.LogBuyRealEstate({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
+      instance.LogBuyGSCMarket({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
         if (!error) {
             this.setState({ 
               events: this.state.events.concat({ 
@@ -130,33 +95,33 @@ class App extends React.Component {
         } else {
           console.error(error);
         } 
-        // this.loadRealEstates();
+        // this.loadGSCMarket();
       })
     })
   }
 
-  loadRealEstates = () => {
+  loadGSCMarket = () => {
     this.contracts.deployed().then( (instance) => {
       return instance.getAllBuyers.call();
     }).then( (buyers) => {
       for (let i = 0; i < buyers.length; i++) {
         if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
-          var imgType = $('.panel-realEstate').eq(i).find('img').attr('src').substr(7);
+          var imgType = $('.panel-gscMarket').eq(i).find('img').attr('src').substr(7);
 
           switch(imgType) {
             case 'turbine-engine.jpg':
-              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/turbine-engine_sold.jpg')
+              $('.panel-gscMarket').eq(i).find('img').attr('src', 'images/turbine-engine_sold.jpg')
               break;
             case 'turbofan-engine.jpg':
-              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/turbofan-engine_sold.jpg')
+              $('.panel-gscMarket').eq(i).find('img').attr('src', 'images/turbofan-engine_sold.jpg')
               break;
             case 'wankel-engine.jpg':
-              $('.panel-realEstate').eq(i).find('img').attr('src', 'images/wankel-engine_sold.jpg')
+              $('.panel-gscMarket').eq(i).find('img').attr('src', 'images/wankel-engine_sold.jpg')
               break;
           }
 
-          $('.panel-realEstate').eq(i).find('.btn-buy').text('Sold').attr('disabled', true);
-          $('.panel-realEstate').eq(i).find('.btn-buyerInfo').removeAttr('style');
+          $('.panel-gscMarket').eq(i).find('.btn-buy').text('Sold').attr('disabled', true);
+          $('.panel-gscMarket').eq(i).find('.btn-buyerInfo').removeAttr('style');
         }
       }
     }).catch(function(err) {
@@ -164,12 +129,13 @@ class App extends React.Component {
     });
   }
 
-  BuyRealEstate = (e) => {
+  BuyGSCMarket = (e) => {
 
     let id = $('#id').val();
     let name = $('#name').val();
     let price = $('#price').val();
-    let age = $('#age').val();
+    // let age = $('#age').val();
+    let age = 22;
 
     this.web3.eth.getAccounts( (error, accounts) => {
       if (error) {
@@ -181,33 +147,16 @@ class App extends React.Component {
         this.contracts.deployed().then( (instance) => {
         // console.log('instance: ' + instance);
         let nameUtf8Encoded = utf8.encode(name);
-        return instance.buyRealEstate(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
+        return instance.buyGSCMarket(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
       }).then( () => {
         $('#name').val('');
-        $('#age').val('');
+        // $('#age').val('');
         $('#buyModal').modal('hide');
       }).catch( err => {
         console.log(err.message);
       } );
     });
   }
-
-  // watchEvents() {
-  //   // TODO: trigger event when vote is counted, not when component renders
-  //   this.electionInstance.votedEvent({}, {
-  //     fromBlock: 0,
-  //     toBlock: 'latest'
-  //   }).watch((error, event) => {
-  //     this.setState({ voting: false })
-  //   })
-  // }
-
-  // castVote(candidateId) {
-  //   this.setState({ voting: true })
-  //   this.electionInstance.vote(candidateId, { from: this.state.account }).then((result) =>
-  //     this.setState({ hasVoted: true })
-  //   )
-  // }
 
   render() {
     return (
@@ -289,11 +238,11 @@ class App extends React.Component {
                         <input type="hidden" id="id" value={this.state.itemid} />
                         <input type="hidden" id="price" value={this.state.itemPrice} />
                         <input type="text" className="form-control" id="name" placeholder="Name" /><br/>
-                        <input type="number" className="form-control" id="age" placeholder="Age" />
+                        {/* <input type="number" className="form-control" id="age" placeholder="Age" /> */}
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onClick={this.BuyRealEstate}>Submit</button>
+                        <button type="button" class="btn btn-primary" onClick={this.BuyGSCMarket}>Submit</button>
                     </div>
                 </div>
             </div>
@@ -309,7 +258,7 @@ class App extends React.Component {
                     <div className="modal-body">
                         <strong>Account Info</strong>: {this.state.buyerAddress} <br/>
                         <strong>Name</strong>: {this.state.buyerName} <br/>
-                        <strong>Age</strong>: {this.state.buyerAge} <br/>
+                        {/* <strong>Age</strong>: {this.state.buyerAge} <br/> */}
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
