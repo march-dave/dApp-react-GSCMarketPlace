@@ -1,5 +1,5 @@
 
-# GSC Market Places - DAPP
+# GSC Market Place - DAPP
 To use ReactJS, Es6, & Webpack: https://github.com/march-dave
 
 ## Getting Started
