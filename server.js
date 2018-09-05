@@ -11,8 +11,9 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'src', 'index.html'));
 });
 
-app.listen(port);
-
+app.listen(port, () => {
+    console.info(`Express Listening on Port: ${port}`);
+});
 
 // const express = require('express');
 // const path = require('path');

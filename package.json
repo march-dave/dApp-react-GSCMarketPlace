@@ -7,7 +7,7 @@
         "test": "test"
     },
     "scripts": {
-        "start": "webpack-dev-server --open",
+        "start": "node server.js",
         "build": "webpack",
         "prod": "webpack --config ./webpack.prod.config.js --progress --colors",
         "heroku-postbuild": "webpack -p",
