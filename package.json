@@ -8,6 +8,7 @@
     },
     "scripts": {
         "start": "node server.js",
+        "local": "webpack-dev-server --open",
         "build": "webpack",
         "prod": "webpack --config ./webpack.prod.config.js --progress --colors",
         "heroku-postbuild": "webpack -p",

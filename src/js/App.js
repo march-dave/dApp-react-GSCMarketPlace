@@ -80,7 +80,7 @@ class App extends React.Component {
   }
 
   listenToEvents = () => {
-    
+
     this.contracts.deployed().then(  (instance) => {
       instance.LogBuyGSCMarket({}, { fromBlock: 0, toBlock: 'latest' }).watch((error, event) => {
         if (!error) {
@@ -104,7 +104,9 @@ class App extends React.Component {
     }).then( (buyers) => {
       for (let i = 0; i < buyers.length; i++) {
         if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
-          var imgType = $('.panel-gscMarket').eq(i).find('img').attr('src').substr(7);
+          var imgType = $('.panel-gscMarket').eq(i).find('img').attr('src').substr(11);
+
+          console.log(imgType);
 
           switch(imgType) {
             case 'turbine-engine.jpg':
@@ -200,7 +202,7 @@ class App extends React.Component {
             {
               data.map( c => {
                 return (
-                <div className="col-sm-4 card-body panel-realEstate">
+                <div className="col-sm-4 card-body panel-gscMarket">
                   <img className="card-img-top" ref={i => this.img = i} src={c.picture} width="240" height="150" />
 
                   <div className="card-body">
