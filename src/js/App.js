@@ -108,13 +108,13 @@ class App extends React.Component {
 
           switch(imgType) {
             case 'turbine-engine.jpg':
-              $('.panel-gscMarket').eq(i).find('img').attr('src', 'images/turbine-engine_sold.jpg')
+              $('.panel-gscMarket').eq(i).find('img').attr('src', 'src/images/turbine-engine_sold.jpg')
               break;
             case 'turbofan-engine.jpg':
-              $('.panel-gscMarket').eq(i).find('img').attr('src', 'images/turbofan-engine_sold.jpg')
+              $('.panel-gscMarket').eq(i).find('img').attr('src', 'src/images/turbofan-engine_sold.jpg')
               break;
             case 'wankel-engine.jpg':
-              $('.panel-gscMarket').eq(i).find('img').attr('src', 'images/wankel-engine_sold.jpg')
+              $('.panel-gscMarket').eq(i).find('img').attr('src', 'src/images/wankel-engine_sold.jpg')
               break;
           }
 
@@ -162,7 +162,7 @@ class App extends React.Component {
 
         <div className="row" style={{background: "#64b5f6", height: "40px", color: "#FFF" }}>
           <div className="col-sm">
-            <img src="images/logo-top.png" style={{  paddingTop: "6px"}} />
+            <img src="src/images/logo-top.png" style={{  paddingTop: "6px"}} />
           </div>
           <div className="col-sm-8">
             <div style={{ paddingTop: "7px"}}>
