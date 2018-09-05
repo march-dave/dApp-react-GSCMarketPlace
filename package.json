@@ -1,5 +1,5 @@
 {
-    "name": "GSC Market Place",
+    "name": "GSCMarketPlace",
     "version": "1.0.0",
     "description": "",
     "main": "truffle.js",
@@ -10,6 +10,7 @@
         "start": "webpack-dev-server --open",
         "build": "webpack",
         "prod": "webpack --config ./webpack.prod.config.js --progress --colors",
+        "heroku-postbuild": "webpack -p",
         "dev": "webpack --config ./webpack.dev.config.js --progress --colors",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

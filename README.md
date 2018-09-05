@@ -11,3 +11,5 @@ $ npm run start
 
 ## Deploy to Ropsten Network to use truffle
 truffle migrate --compile-all --reset --network ropsten
+
+#"start": "webpack-dev-server --open"
