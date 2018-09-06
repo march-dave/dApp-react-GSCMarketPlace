@@ -263,14 +263,14 @@ class App extends React.Component {
             </div>
         </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-sm">
             
             <div className="input-group mb-3">
               <input type="text" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
-              {/* <div className="input-group-append"></div>
+              <div className="input-group-append"></div>
                 <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-              </div> */}
+              </div>
             </div>
           </div>
 
@@ -299,12 +299,13 @@ class App extends React.Component {
                 </div>
               </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="row">
+              
+        {/* <div className="row">
           <div className="col-sm">Grid</div>
           <div className="col-sm">Drop Down Box</div>
-        </div>
+        </div> */}
 
       </div>
     )
