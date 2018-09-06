@@ -106,8 +106,6 @@ class App extends React.Component {
         if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
           var imgType = $('.panel-gscMarket').eq(i).find('img').attr('src').substr(11);
 
-          console.log(imgType);
-
           switch(imgType) {
             case 'turbine-engine.jpg':
               $('.panel-gscMarket').eq(i).find('img').attr('src', 'src/images/turbine-engine_sold.jpg')
@@ -143,9 +141,7 @@ class App extends React.Component {
       }
 
       let account = accounts[0];
-      // console.log('account: ' + account);
         this.contracts.deployed().then( (instance) => {
-        // console.log('instance: ' + instance);
         let nameUtf8Encoded = utf8.encode(name);
         return instance.buyGSCMarket(id, web3.toHex(nameUtf8Encoded), age, { from: account, value: price });
       }).then( () => {
