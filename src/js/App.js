@@ -158,7 +158,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
 
-        <div className="row" style={{background: "#64b5f6", height: "40px", color: "#FFF" }}>
+        <div className="row" style={{background: "#64b5f6", height: "50px", color: "#FFF" }}>
           <div className="col-sm">
             {/* <img src="src/images/logo-top.png" style={{  paddingTop: "6px"}} /> */}
             <img src="https://ipfs.io/ipfs/Qmb5pp2h9oVUUJDPGTGtBcqNcqZdBNbJzwMj2YPRUNdpeu" style={{  paddingTop: "6px"}} />
@@ -200,7 +200,7 @@ class App extends React.Component {
               data.map( c => {
                 return (
                 <div className="col-sm-4 card-body panel-gscMarket">
-                  <img className="card-img-top" ref={i => this.img = i} src={c.picture} width="240" height="150" />
+                  <img className="card-img-top" ref={i => this.img = i} src={c.picture} width="240" />
 
                   <div className="card-body">
                     <h5 className="card-title">{c.type}</h5>
