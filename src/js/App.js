@@ -132,7 +132,6 @@ class App extends React.Component {
     let id = $('#id').val();
     let name = $('#name').val();
     let price = $('#price').val();
-    // let age = $('#age').val();
     let age = 22;
 
     this.web3.eth.getAccounts( (error, accounts) => {
@@ -160,7 +159,6 @@ class App extends React.Component {
 
         <div className="row" style={{background: "#64b5f6", height: "50px", color: "#FFF" }}>
           <div className="col-sm">
-            {/* <img src="src/images/logo-top.png" style={{  paddingTop: "6px"}} /> */}
             <img src="https://ipfs.io/ipfs/Qmb5pp2h9oVUUJDPGTGtBcqNcqZdBNbJzwMj2YPRUNdpeu" style={{  paddingTop: "6px"}} />
           </div>
           <div className="col-sm-8">
