@@ -184,7 +184,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="col-sm">
-            {/* Login */}
+            Login
           </div>
         </div>
 
