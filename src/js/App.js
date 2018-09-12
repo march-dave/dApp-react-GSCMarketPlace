@@ -239,7 +239,7 @@ class App extends React.Component {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" onClick={this.BuyGSCMarket}>Submit</button>
+                        <button type="button" className="btn btn-primary" onClick={this.BuyGSCMarket}>Submit</button>
                     </div>
                 </div>
             </div>
