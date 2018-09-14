@@ -109,6 +109,9 @@ class App extends React.Component {
           console.log('this.img');
           console.log(this.img);
 
+          console.log('imgType');
+          console.log(imgType);
+
           switch(imgType) {
             case 'turbine-engine.jpg':
               $('.panel-gscMarket').eq(i).find('img').attr('src', 'src/images/turbine-engine_sold.jpg')
