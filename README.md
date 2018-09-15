@@ -2,6 +2,9 @@
 # GSC Market Place - DAPP
 To use ReactJS, Es6, & Webpack: https://github.com/march-dave
 
+# MVC Code
+https://gitlab.com/GSC_Developers/mvp.git
+
 ## Getting Started
 ```
 $ npm install
