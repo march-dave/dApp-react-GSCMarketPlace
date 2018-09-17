@@ -5,7 +5,6 @@ contract GSCMarket {
         address buyerAddress;
         bytes32 name;
         uint age;
-        
     }
 
     mapping (uint => Buyer) public buyerInfo;
