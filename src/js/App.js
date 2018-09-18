@@ -106,12 +106,6 @@ class App extends React.Component {
         if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
           var imgType = $('.panel-gscMarket').eq(i).find('img').attr('src').substr(11);
 
-          // console.log('this.img');
-          // console.log(this.img);
-
-          // console.log('imgType');
-          // console.log(imgType);
-
           switch(imgType) {
             case 'turbine-engine.jpg':
               $('.panel-gscMarket').eq(i).find('img').attr('src', 'src/images/turbine-engine_sold.jpg')
