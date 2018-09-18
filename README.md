@@ -3,7 +3,7 @@
 To use ReactJS, Es6, & Webpack:
 
 # MVC Code
-https://gitlab.com/GSC_Developers/mvp.git
+https://github.com/march-dave/dApp-react-GSCMarketPlace
 
 
 ## Getting Started
