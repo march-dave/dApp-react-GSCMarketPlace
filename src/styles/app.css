@@ -12,18 +12,3 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 10px;
 }
-
-
-/* @media (--break-lg) {
-    .HolyGrail-body {
-      flex-direction: row;
-    }
-    .HolyGrail-content {
-      flex: 1;
-      padding: 0 var(--space-lg);
-      margin: 0;
-    }
-    .HolyGrail-nav, .HolyGrail-ads {
-      flex: 0 0 12em;
-    }
-  } */
