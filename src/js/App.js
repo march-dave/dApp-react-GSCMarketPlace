@@ -104,6 +104,9 @@ class App extends React.Component {
     }).then( (buyers) => {
       for (let i = 0; i < buyers.length; i++) {
         if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
+
+          // ? How to find image Type to use React JS !!
+          // It is not correct solution because I am still using jQuery.
           var imgType = $('.panel-gscMarket').eq(i).find('img').attr('src').substr(11);
 
           switch(imgType) {
