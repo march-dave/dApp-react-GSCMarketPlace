@@ -116,6 +116,9 @@ class App extends React.Component {
           if (buyers[i] !== "0x0000000000000000000000000000000000000000") {
             // ? How to find image Type to use React JS !!
             // It is not correct solution because I am still using jQuery.
+
+            console.log(this.img);
+
             var imgType = $(".panel-gscMarket")
               .eq(i)
               .find("img")
