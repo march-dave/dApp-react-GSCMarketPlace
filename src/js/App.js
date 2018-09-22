@@ -117,7 +117,7 @@ class App extends React.Component {
             // ? How to find image Type to use React JS !!
             // It is not correct solution because I am still using jQuery.
 
-            console.log(this.img);
+            console.log(this.img)
 
             var imgType = $(".panel-gscMarket")
               .eq(i)
@@ -245,7 +245,7 @@ class App extends React.Component {
         {/* <div className="row"><ProductCarousel/></div> */}
 
         <div className="row">
-          {data.map(c => {
+          {data.map((c => {
             return (
               <div className="col-sm-4 card-body panel-gscMarket">
                 <img
