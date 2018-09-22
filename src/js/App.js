@@ -250,7 +250,7 @@ class App extends React.Component {
               <div className="col-sm-4 card-body panel-gscMarket">
                 <img
                   className="card-img-top"
-                  ref={i => (this.img[idx] = i)}
+                  ref={i => (this.img = i)}
                   src={c.picture}
                   width="240"
                 />
