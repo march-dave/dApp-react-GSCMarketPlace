@@ -245,12 +245,12 @@ class App extends React.Component {
         {/* <div className="row"><ProductCarousel/></div> */}
 
         <div className="row">
-          {data.map((c => {
+          {data.map( (c, idx) => {
             return (
               <div className="col-sm-4 card-body panel-gscMarket">
                 <img
                   className="card-img-top"
-                  ref={i => (this.img = i)}
+                  ref={i => (this.img[idx] = i)}
                   src={c.picture}
                   width="240"
                 />
