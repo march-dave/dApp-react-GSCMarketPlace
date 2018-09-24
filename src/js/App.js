@@ -120,6 +120,7 @@ class App extends React.Component {
             // console.log(this.img[0])
             // console.log(this.img[1])
             // console.log(this.img[2])
+            console.log(this.img)
 
             var imgType = $(".panel-gscMarket")
               .eq(i)
