@@ -121,7 +121,7 @@ class App extends React.Component {
 
             // console.log(this.img[i])
 
-            console.log(this.img[i].filter("src"))
+            console.log(this.img[i].include("src"))
 
             var imgType = $(".panel-gscMarket")
               .eq(i)
