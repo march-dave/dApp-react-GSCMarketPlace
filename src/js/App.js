@@ -29,7 +29,7 @@ class App extends React.Component {
       buyerAddress: "",
       buyerName: "",
       buyerAge: "",
-      events: [{ buyer: "", id: "" }],
+      events: [{ buyer: "", id: "" }]
     };
 
     this.img = [];
@@ -121,44 +121,44 @@ class App extends React.Component {
 
             // console.log(this.img[i])
 
-            console.log(this.img[i].include("src"))
+            console.log(this.img[i]);
 
-            var imgType = $(".panel-gscMarket")
-              .eq(i)
-              .find("img")
-              .attr("src")
-              .substr(11);
+            // var imgType = $(".panel-gscMarket")
+            //   .eq(i)
+            //   .find("img")
+            //   .attr("src")
+            //   .substr(11);
 
-            switch (imgType) {
-              case "turbine-engine.jpg":
-                $(".panel-gscMarket")
-                  .eq(i)
-                  .find("img")
-                  .attr("src", "src/images/turbine-engine_sold.jpg");
-                break;
-              case "turbofan-engine.jpg":
-                $(".panel-gscMarket")
-                  .eq(i)
-                  .find("img")
-                  .attr("src", "src/images/turbofan-engine_sold.jpg");
-                break;
-              case "wankel-engine.jpg":
-                $(".panel-gscMarket")
-                  .eq(i)
-                  .find("img")
-                  .attr("src", "src/images/wankel-engine_sold.jpg");
-                break;
-            }
+            // switch (imgType) {
+            //   case "turbine-engine.jpg":
+            //     $(".panel-gscMarket")
+            //       .eq(i)
+            //       .find("img")
+            //       .attr("src", "src/images/turbine-engine_sold.jpg");
+            //     break;
+            //   case "turbofan-engine.jpg":
+            //     $(".panel-gscMarket")
+            //       .eq(i)
+            //       .find("img")
+            //       .attr("src", "src/images/turbofan-engine_sold.jpg");
+            //     break;
+            //   case "wankel-engine.jpg":
+            //     $(".panel-gscMarket")
+            //       .eq(i)
+            //       .find("img")
+            //       .attr("src", "src/images/wankel-engine_sold.jpg");
+            //     break;
+            // }
 
-            $(".panel-gscMarket")
-              .eq(i)
-              .find(".btn-buy")
-              .text("Sold")
-              .attr("disabled", true);
-            $(".panel-gscMarket")
-              .eq(i)
-              .find(".btn-buyerInfo")
-              .removeAttr("style");
+            // $(".panel-gscMarket")
+            //   .eq(i)
+            //   .find(".btn-buy")
+            //   .text("Sold")
+            //   .attr("disabled", true);
+            // $(".panel-gscMarket")
+            //   .eq(i)
+            //   .find(".btn-buyerInfo")
+            //   .removeAttr("style");
           }
         }
       })
@@ -249,7 +249,7 @@ class App extends React.Component {
         {/* <div className="row"><ProductCarousel/></div> */}
 
         <div className="row">
-          {data.map( (c, idx) => {
+          {data.map((c, idx) => {
             return (
               <div className="col-sm-4 card-body panel-gscMarket">
                 <img
