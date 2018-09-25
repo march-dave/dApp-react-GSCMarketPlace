@@ -29,8 +29,10 @@ class App extends React.Component {
       buyerAddress: "",
       buyerName: "",
       buyerAge: "",
-      events: [{ buyer: "", id: "" }]
+      events: [{ buyer: "", id: "" }],
     };
+
+    this.img = [];
 
     if (typeof web3 != "undefined") {
       this.web3Provider = web3.currentProvider;
@@ -117,10 +119,7 @@ class App extends React.Component {
             // ? How to find image Type to use React JS !!
             // It is not correct solution because I am still using jQuery.
 
-            // console.log(this.img[0])
-            // console.log(this.img[1])
-            // console.log(this.img[2])
-            console.log(this.img)
+            console.log(this.img[i])
 
             var imgType = $(".panel-gscMarket")
               .eq(i)
@@ -253,7 +252,7 @@ class App extends React.Component {
               <div className="col-sm-4 card-body panel-gscMarket">
                 <img
                   className="card-img-top"
-                  ref={i => (this.img = i)}
+                  ref={i => (this.img[idx] = i)}
                   src={c.picture}
                   width="240"
                 />
