@@ -119,7 +119,9 @@ class App extends React.Component {
             // ? How to find image Type to use React JS !!
             // It is not correct solution because I am still using jQuery.
 
-            console.log(this.img[i])
+            // console.log(this.img[i])
+
+            console.log(this.img[i].filter("src"))
 
             var imgType = $(".panel-gscMarket")
               .eq(i)
