@@ -32,7 +32,7 @@ class App extends React.Component {
       events: [{ buyer: "", id: "" }]
     };
 
-    this.img = [];
+    this.pic = [];
 
     if (typeof web3 != "undefined") {
       this.web3Provider = web3.currentProvider;
@@ -116,49 +116,45 @@ class App extends React.Component {
       .then(buyers => {
         for (let i = 0; i < buyers.length; i++) {
           if (buyers[i] !== "0x0000000000000000000000000000000000000000") {
-            // ? How to find image Type to use React JS !!
-            // It is not correct solution because I am still using jQuery.
 
-            // console.log(this.img[i])
+            // console.log(this.pic[i]);
 
-            console.log(this.img[i]);
+            var imgType = $(".panel-gscMarket")
+              .eq(i)
+              .find("img")
+              .attr("src")
+              .substr(11);
 
-            // var imgType = $(".panel-gscMarket")
-            //   .eq(i)
-            //   .find("img")
-            //   .attr("src")
-            //   .substr(11);
+            switch (imgType) {
+              case "turbine-engine.jpg":
+                $(".panel-gscMarket")
+                  .eq(i)
+                  .find("img")
+                  .attr("src", "src/images/turbine-engine_sold.jpg");
+                break;
+              case "turbofan-engine.jpg":
+                $(".panel-gscMarket")
+                  .eq(i)
+                  .find("img")
+                  .attr("src", "src/images/turbofan-engine_sold.jpg");
+                break;
+              case "wankel-engine.jpg":
+                $(".panel-gscMarket")
+                  .eq(i)
+                  .find("img")
+                  .attr("src", "src/images/wankel-engine_sold.jpg");
+                break;
+            }
 
-            // switch (imgType) {
-            //   case "turbine-engine.jpg":
-            //     $(".panel-gscMarket")
-            //       .eq(i)
-            //       .find("img")
-            //       .attr("src", "src/images/turbine-engine_sold.jpg");
-            //     break;
-            //   case "turbofan-engine.jpg":
-            //     $(".panel-gscMarket")
-            //       .eq(i)
-            //       .find("img")
-            //       .attr("src", "src/images/turbofan-engine_sold.jpg");
-            //     break;
-            //   case "wankel-engine.jpg":
-            //     $(".panel-gscMarket")
-            //       .eq(i)
-            //       .find("img")
-            //       .attr("src", "src/images/wankel-engine_sold.jpg");
-            //     break;
-            // }
-
-            // $(".panel-gscMarket")
-            //   .eq(i)
-            //   .find(".btn-buy")
-            //   .text("Sold")
-            //   .attr("disabled", true);
-            // $(".panel-gscMarket")
-            //   .eq(i)
-            //   .find(".btn-buyerInfo")
-            //   .removeAttr("style");
+            $(".panel-gscMarket")
+              .eq(i)
+              .find(".btn-buy")
+              .text("Sold")
+              .attr("disabled", true);
+            $(".panel-gscMarket")
+              .eq(i)
+              .find(".btn-buyerInfo")
+              .removeAttr("style");
           }
         }
       })
@@ -254,7 +250,7 @@ class App extends React.Component {
               <div className="col-sm-4 card-body panel-gscMarket">
                 <img
                   className="card-img-top"
-                  ref={i => (this.img[idx] = i)}
+                  ref={i => (this.pic[idx] = i)}
                   src={c.picture}
                   width="240"
                 />
