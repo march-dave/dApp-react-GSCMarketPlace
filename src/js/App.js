@@ -244,6 +244,8 @@ class App extends React.Component {
 
         {/* <div className="row"><ProductCarousel/></div> */}
 
+        {/* image toggle based on true or false */}
+
         <div className="row">
           {data.map((c, idx) => {
             return (
