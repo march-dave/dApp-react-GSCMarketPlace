@@ -103,6 +103,8 @@ class App extends React.Component {
             console.error(error);
           }
           this.loadGSCMarket();
+          console.log(this.pic[i]);
+
         });
     });
   };
@@ -117,7 +119,7 @@ class App extends React.Component {
         for (let i = 0; i < buyers.length; i++) {
           if (buyers[i] !== "0x0000000000000000000000000000000000000000") {
 
-            console.log(this.pic[i]);
+            // console.log(this.pic[i]);
 
             var imgType = $(".panel-gscMarket")
               .eq(i)
