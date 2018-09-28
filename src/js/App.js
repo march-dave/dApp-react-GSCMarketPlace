@@ -105,9 +105,9 @@ class App extends React.Component {
           this.loadGSCMarket();
           
           
-          this.pic.map( c => {
-            console.log( c  );
-          })
+          // this.pic.map( c => {
+          //   console.log( c  );
+          // })
 
         });
     });
