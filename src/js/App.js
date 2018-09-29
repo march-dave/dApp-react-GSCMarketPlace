@@ -120,10 +120,9 @@ class App extends React.Component {
       })
       .then(buyers => {
         for (let i = 0; i < buyers.length; i++) {
+          // item already sold
           if (buyers[i] !== "0x0000000000000000000000000000000000000000") {
-
-            // console.log(this.pic[i]);
-
+            // images search and replace to sold image
             var imgType = $(".panel-gscMarket")
               .eq(i)
               .find("img")
