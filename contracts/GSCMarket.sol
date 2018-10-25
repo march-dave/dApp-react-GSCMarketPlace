@@ -4,13 +4,12 @@ contract GSCMarket {
     struct Buyer {
         address buyerAddress;
         bytes32 name;
-
         uint age;
     }
 
     mapping (uint => Buyer) public buyerInfo;
     address public owner;
-    address[11] public buyers;
+    address[10] public buyers;
 
     event LogBuyGSCMarket(
         address _buyer,
