@@ -2,7 +2,7 @@
 # GSC Market Place - DAPP
 To use ReactJS, Es6, & Webpack:
 
-# MVC Code
+# MVP Code
 https://github.com/march-dave/dApp-react-GSCMarketPlace
 
 
